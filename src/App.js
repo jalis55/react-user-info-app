@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import SearchUser from './SearchUser';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import UserDetails from './UserDetails';
+import UserDetailsDownload from './UserDetailsDownload';
 
 function App() {
 
@@ -10,19 +11,18 @@ function App() {
 
   const addUserDetails=(userData)=>{
     setUserDetails(userData);
-    console.log(userData);
   }
+  
   
   return (
     <div className="App">
     <SearchUser addUserDetails={addUserDetails}/>
-    {
-      userDetails && <UserDetails userDetails={userDetails}/>
-    }
+    {userDetails && <UserDetailsDownload userDetails={userDetails}/> }
     
-
     </div>
   );
 }
 
 export default App;
+
+
