@@ -10,6 +10,7 @@ function App() {
 
   const addUserDetails=(userData)=>{
     setUserDetails(userData);
+    console.log(userData);
   }
   
   return (
